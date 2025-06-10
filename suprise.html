@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>🎁 Surprise untuk Aira 🎁</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fff4f7;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #e91e63;
+    }
+    .song-button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      background-color: #f06292;
+      color: white;
+      transition: 0.3s;
+    }
+    .song-button:hover {
+      background-color: #ec407a;
+    }
+    .text-section {
+      margin-top: 40px;
+      font-size: 18px;
+      white-space: pre-wrap;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎁 Surprise untuk Aira 🎁</h1>
+  <p id="introText">Pilih salah satu lagu ini dulu ya:</p>
+
+  <div id="songButtons">
+    <button class="song-button" onclick="playSong('lagu1')">🎶 Can I Be Him</button>
+    <button class="song-button" onclick="playSong('lagu2')">🎶 Sorai</button>
+  </div>
+
+  <audio id="lagu1" src="https://files.catbox.moe/du84og.mpeg" preload="auto"></audio>
+  <audio id="lagu2" src="https://files.catbox.moe/c8yxqv.mpeg" preload="auto"></audio>
+
+  <div id="textSection" class="hidden text-section">
+  </div>
+
+  <script>
+function playSong(id) {
+  document.getElementById("songButtons").style.display = "none";
+  document.getElementById("introText").style.display = "none";
+
+  const audio = document.getElementById(id);
+  audio.play();
+
+  // Teks dengan \n
+  const message = `Dear Aira Cantika Putri
+Pertama-Tama saya mau bilang gak tau kenapa saya rasa akhir akhir ini kamu lebih diem , lebih cuek dari biasanya, mungkin ya cuman perasaan tapi setiap saya ngechat kamu , kadang kadang normal tapi kadang kadang bikin saya mau grebek rumah kamu :> 
+perasaan saya itu, kamu akhir akhir ini kok rasanya makin menjauh yaa?. mungkin setiap saya lihat kamu, kamu nya malah menghindar atau malah pura pura gak liat, ya meskipun ya saya juga lihat tapi malahh pura pura lihat ke yang lain juga.\nTapiii saya lihat yang lain itu sambil mikir, kenapa ya aira makin diem, makin menjauh rasanya. apa saya ada salah sama dia tapi saya gak nyadar?
+yah tujuan saya buat surat spesial ini cuman pengen kasih tau sesuatu yang ada di lubuk hari saya yang janggal tiap hari,Mau saya bilang langsung but 'i am too shame aira TwT' \n\nYang selanjutnya semoga aja kita masih bisa mabar bersama, kenapa? karena pindah kelas mungkin bakal jarang chat , jarang ketemu , mungkkin juga bakal malu malu menyapa , ya bakal berpisah sama digital sama deret "tergacor" tapi ya semoga aja kalian gak lupa saya woi! ya muungkin itu aja dari saya , semoga lancar digital season 2 nya ! nanti juga bakal ketemu lagi kok , kelas 2 sudah mulai harus kejar target soalnya kelas 2 dan 3 itu waktunya cuman 2 TAHUN bang , harus "farming" terus sertifikat terus skill nya , apalagi ilmunya tuh ya sangad diperlukan.
+ya itu aja dari saya spesial dari hati terdalam
+
+— heroikzre`;
+
+  // Delay sebelum menampilkan teks
+  setTimeout(() => {
+    const section = document.getElementById("textSection");
+    section.innerHTML = message.replace(/\n/g, "<br>");
+    section.classList.remove("hidden");
+  }, 1000); // 6 detik delay
+}
+
+  </script>
+</body>
+</html>
